@@ -54,20 +54,24 @@ export default function App() {
   const [movies, setMovies] = useState(tempMovieData);
   return (
     <>
-      <Navigator movies={movies} />
-      <Main movies={movies} />
+      <Navigator>
+        <Logo />
+        <Search />
+        <Result movies={movies} />
+      </Navigator>
+      <Main>
+        {" "}
+        <ListBox movies={movies} />
+        <WatchedBox />
+      </Main>
     </>
   );
 }
 
-function Navigator({ movies }) {
+function Navigator({ children }) {
   return (
     <>
-      <nav className="nav-bar">
-        <Logo />
-        <Search />
-        <Result movies={movies} />
-      </nav>
+      <nav className="nav-bar">{children}</nav>
     </>
   );
 }
@@ -102,13 +106,8 @@ function Search() {
   );
 }
 
-function Main({ movies }) {
-  return (
-    <main className="main">
-      <ListBox movies={movies} />
-      <WatchedBox />
-    </main>
-  );
+function Main({ children }) {
+  return <main className="main">{children}</main>;
 }
 
 function ListBox({ movies }) {
