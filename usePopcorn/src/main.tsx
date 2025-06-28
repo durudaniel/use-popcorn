@@ -4,6 +4,7 @@ import { useState } from "react";
 //import App from './App'
 //import './index.css'
 import StarRating from "./StarRating";
+
 function Test({ defaultRating = 0 }) {
   const [movieRating, setMovieRating] = useState(0);
   return (
