@@ -21,6 +21,13 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
       maxRating={5}
       messages={["terrible", "bad", "okay", "good", "amazing"]}
     />
+    <StarRating
+      maxRating={10}
+      color={"red"}
+      size={30}
+      className="test"
+      defaultRating={3}
+    />
 
     <Test />
   </React.StrictMode>
